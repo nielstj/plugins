@@ -709,6 +709,7 @@ public class CameraPlugin implements MethodCallHandler {
     }
 
     private void startPreview() throws CameraAccessException {
+      try {
       closeCaptureSession();
 
       SurfaceTexture surfaceTexture = textureEntry.surfaceTexture();
@@ -749,6 +750,7 @@ public class CameraPlugin implements MethodCallHandler {
             }
           },
           null);
+        } catch (Exception e) {}
     }
 
     private void startPreviewWithImageStream() throws CameraAccessException {
